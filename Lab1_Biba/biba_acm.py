@@ -34,8 +34,8 @@ def get_file_integrity(file):
 
 def check_access(user, file, action):
     """Checks if a user can access a file based on the Biba Model rules."""
-    user_level_str = user_integrity.get(user, "Low")
-    file_level_str = get_file_integrity(file)
+    user_level_str = user_integrity.get(user, "Low") # Get user's integrity level
+    file_level_str = get_file_integrity(file) # Get file's integrity level
 
     user_level = integrity_levels[user_level_str]
     file_level = integrity_levels[file_level_str]
