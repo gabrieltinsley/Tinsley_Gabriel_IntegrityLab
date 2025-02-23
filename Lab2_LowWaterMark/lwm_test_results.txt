@@ -1,1 +1,5 @@
+Test Case 1: High-Integrity User Reads Low-Integrity File
+Alice read File1. Integrity now: Low
 
+Test Case 2: Attempt to Modify High-Integrity Data After Downgrade
+Write access denied: Alice (Integrity: Low) cannot modify File1 (Integrity: Low)
