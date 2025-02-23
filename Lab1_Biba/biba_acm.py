@@ -7,18 +7,14 @@
 ACM = {
     "Alice": {"File1": {"rights": ["read"], "integrity": "High"}},
     "Bob": {"File1": {"rights": ["write"], "integrity": "Low"}},
+    "Jack": {"File2": {"rights": ["read"], "integrity": "Low"}},
+    "Jill": {"File2": {"rights": ["write"], "integrity": "High"}},
 }
 
-# Integrity level mapping
-integrity_levels = {"Low": 1, "High": 2}
-
-# Checks if a user can access a file based on Biba Model rules
 def check_access(user, file, action):
-    user_level_str = ACM.get(user, {}).get(file, {}).get("integrity", "Low")
-    file_level_str = next((ACM[u][file]["integrity"] for u in ACM if file in ACM[u]), "Low")
-    
-    user_level = integrity_levels[user_level_str]
-    file_level = integrity_levels[file_level_str]
+    """Checks if a user can access a file based on the Biba Model rules."""
+    user_level = ACM.get(user, {}).get(file, {}).get("integrity", "Low")
+    file_level = ACM.get(user, {}).get(file, {}).get("integrity", "Low")
 
     if action == "read" and user_level < file_level:
         print(f"Access Denied: {user} cannot read {file} (No Read Down)")
@@ -31,5 +27,6 @@ def check_access(user, file, action):
 
 # Testing Integrity Rules
 check_access("Alice", "File1", "read")  # Should be allowed
-check_access("Bob", "File1", "write")   # Should be denied
-
+check_access("Bob", "File1", "write")  # Should be denied
+check_access("Jill", "File2", "read") # Should be denied
+check_access("Jack", "File2", "write") # Should be allowed
