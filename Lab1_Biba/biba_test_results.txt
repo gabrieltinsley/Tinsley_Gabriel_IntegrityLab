@@ -1,1 +1,8 @@
+Test Case 1: High-Integrity Subject Reading a Low-Integrity Object
+Access Denied: Alice cannot read File2 (No Read Down)
 
+Test Case 2: Low-Integrity Subject Writing to a High-Integrity Object
+Access Denied: Bob cannot write File1 (No Write Up)
+
+Test Case 3: High-Integrity Subject Reading a High-Integrity Object
+Access Granted: Alice can read File1

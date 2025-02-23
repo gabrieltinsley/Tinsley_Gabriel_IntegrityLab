@@ -51,6 +51,6 @@ def check_access(user, file, action):
         return True
 
 # Testing Integrity Rules
-check_access("Alice", "File1", "read")  # Should be allowed
-check_access("Bob", "File1", "write")  # Should be denied
-check_access("Alice", "File2", "read") # Should be denied
+check_access("Alice", "File2", "read") # Should be denied Test Case 1
+check_access("Bob", "File1", "write")  # Should be denied Test Case 2
+check_access("Alice", "File1", "read")  # Should be allowed Test Case 3
