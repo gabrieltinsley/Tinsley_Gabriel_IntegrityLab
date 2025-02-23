@@ -3,11 +3,6 @@
 
 # Part 1: Implementing the Biba Integrity Model
 
-# @author Gabriel Tinsley
-# Hands-On Lab 2 CS331
-
-# Part 1: Implementing the Biba Integrity Model
-
 # Define user integrity levels
 user_integrity = {
     "Alice" : "High",
