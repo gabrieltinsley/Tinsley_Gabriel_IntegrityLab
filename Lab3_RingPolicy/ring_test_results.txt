@@ -1,1 +1,8 @@
+Test Case 1: High-Integrity User writing to High-Integrity File (Granted)
+Access Granted: Alice can write to File1
 
+Test Case 2: Low-Integrity User Reading High-Integrity File (Granted)
+Access Granted: Bob can read File1
+
+Test Case 3: Low-Integrity User Writing to High-Integrity File (Denied)
+Access Denied: Bob cannot modify File1
